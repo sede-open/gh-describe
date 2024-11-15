@@ -14,6 +14,12 @@ jobs:
   Analysis:
     runs-on: ubuntu-latest
     steps:
+      - name: Full Checkout
+        uses: actions/checkout@v4
+        with:
+          # token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-tags: true    
       - name: Analyze with SonarQube
         uses: SonarSource/sonarqube-scan-action@v4
         env:
