@@ -23,4 +23,5 @@ jobs:
         with:
           args:
             -Dsonar.projectKey=com.shell.gh-describe
+            -Dsonar.scm.provider=git
             -Dsonar.verbose=true
